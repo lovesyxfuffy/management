@@ -51,7 +51,7 @@ service.interceptors.response.use(
         })
       }
       router.push({
-        path: '/login'
+        path: '/manageView/login'
       })
       return Promise.reject('error')
     } else {

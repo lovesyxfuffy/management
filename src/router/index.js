@@ -28,7 +28,7 @@ export const constantRouterMap = [
   { path: publicPath + '/404', component: () => import('@/views/404'), hidden: true },
 
   {
-    path: publicPath+'/',
+    path: '/',
     component: Layout,
     redirect: publicPath + '/home',
     hidden: true
@@ -41,7 +41,7 @@ export const constantRouterMap = [
     meta: { title: '首页配置项', icon: 'example' },
     children: [
       {
-        path:  'carousel',
+        path: 'carousel',
         name: 'Carousel',
         component: () => import('@/views/carousel/index'),
         meta: { title: '轮播图' }
@@ -61,7 +61,7 @@ export const constantRouterMap = [
     ]
   },
   {
-    path: publicPath +'/notice',
+    path: publicPath + '/notice',
     component: Layout,
     redirect: publicPath + '/notice/index',
     meta: {
@@ -153,16 +153,22 @@ export const constantRouterMap = [
     },
     children: [
       {
-        path:  'index',
+        path: 'index',
         component: () => import('@/views/news/create'), // Parent router-view
         name: 'department',
         meta: { title: '业务领域-分支机构' }
       },
       {
-        path:  'list',
+        path: 'list',
         name: 'departmentList',
         component: () => import('@/views/news/list'), // Parent router-view
-        meta: { title: '文章列表' }
+        meta: { title: '分支机构-文章列表' }
+      },
+      {
+        path: 'layout',
+        component: () => import('@/views/aboutUs/index'), // Parent router-view
+        name: 'layout',
+        meta: { title: '业务领域-经营布局' }
       }
     ]
   },
@@ -175,13 +181,13 @@ export const constantRouterMap = [
     },
     children: [
       {
-        path:  'index',
+        path: 'index',
         component: () => import('@/views/news/create'), // Parent router-view
         name: 'project',
         meta: { title: '业绩荣誉-精品工程' }
       },
       {
-        path:  'list',
+        path: 'list',
         name: 'projectList',
         component: () => import('@/views/news/list'), // Parent router-view
         meta: { title: '文章列表' }
@@ -197,19 +203,19 @@ export const constantRouterMap = [
     },
     children: [
       {
-        path:   'talent',
+        path: 'talent',
         component: () => import('@/views/aboutUs/index'),
         name: 'talent',
         meta: { title: '人才战略' }
       },
       {
-        path:  'hiring',
+        path: 'hiring',
         component: () => import('@/views/aboutUs/index'),
         name: 'hiring',
         meta: { title: '招聘信息' }
       },
       {
-        path:   'education',
+        path: 'education',
         component: () => import('@/views/aboutUs/index'),
         name: 'education',
         meta: { title: '教育培训' }
@@ -239,7 +245,7 @@ export const constantRouterMap = [
     hidden: true,
     children: [
       {
-        path:  'index',
+        path: 'index',
         component: () => import('@/views/news/edit'), // Parent router-view
         name: 'Index',
         meta: { title: '编辑' }
@@ -263,11 +269,11 @@ export const constantRouterMap = [
       }
     ]
   },
-  { path: '*', redirect:  publicPath +'/404', hidden: true }
+  { path: '*', redirect: publicPath + '/404', hidden: true }
 ]
 
 export default new Router({
-  mode: 'history',
+  // mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap
 })
