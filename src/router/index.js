@@ -97,7 +97,7 @@ export const constantRouterMap = [
         meta: { title: '中标信息' }
       },
       {
-        path: 'list',
+        path: 'informationList',
         name: 'informationList',
         component: () => import('@/views/news/list'), // Parent router-view
         meta: { title: '文章列表' }
@@ -137,7 +137,7 @@ export const constantRouterMap = [
         meta: { title: '新闻中心' }
       },
       {
-        path: 'list',
+        path: 'newsList',
         name: 'newsList',
         component: () => import('@/views/news/list'), // Parent router-view
         meta: { title: '文章列表' }
@@ -159,7 +159,7 @@ export const constantRouterMap = [
         meta: { title: '业务领域-分支机构' }
       },
       {
-        path: 'list',
+        path: 'departmentList',
         name: 'departmentList',
         component: () => import('@/views/news/list'), // Parent router-view
         meta: { title: '分支机构-文章列表' }
@@ -187,7 +187,7 @@ export const constantRouterMap = [
         meta: { title: '业绩荣誉-精品工程' }
       },
       {
-        path: 'list',
+        path: 'projectList',
         name: 'projectList',
         component: () => import('@/views/news/list'), // Parent router-view
         meta: { title: '文章列表' }
@@ -210,15 +210,27 @@ export const constantRouterMap = [
       },
       {
         path: 'hiring',
-        component: () => import('@/views/aboutUs/index'),
+        component: () => import('@/views/news/create'),
         name: 'hiring',
         meta: { title: '招聘信息' }
       },
       {
+        path: 'hiringList',
+        name: 'hiringList',
+        component: () => import('@/views/news/list'), // Parent router-view
+        meta: { title: '招聘信息-文章列表' }
+      },
+      {
         path: 'education',
-        component: () => import('@/views/aboutUs/index'),
+        component: () => import('@/views/news/create'),
         name: 'education',
         meta: { title: '教育培训' }
+      },
+      {
+        path: 'educationList',
+        name: 'educationList',
+        component: () => import('@/views/news/list'), // Parent router-view
+        meta: { title: '教育培训-文章列表' }
       }
     ]
   },
