@@ -23,7 +23,7 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: ['eventsource-polyfill', 'event-source-polyfill', "babel-polyfill", "./src/main.js"]
   },
   output: {
     path: config.build.assetsRoot,
@@ -54,7 +54,9 @@ module.exports = {
           resolve('src'),
           resolve('test'),
           // resolve('mock'),
-          resolve('node_modules/webpack-dev-server/client')
+          resolve('node_modules/webpack-dev-server/client'),
+          resolve('./node_modules/element-ui/src'),
+          resolve('./node_modules/element-ui/packages')
         ]
       },
       {
