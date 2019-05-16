@@ -28,7 +28,7 @@ export const constantRouterMap = [
   { path: publicPath + '/404', component: () => import('@/views/404'), hidden: true },
 
   {
-    path: publicPath+'/',
+    path: '/',
     component: Layout,
     redirect: publicPath + '/login',
     hidden: true
