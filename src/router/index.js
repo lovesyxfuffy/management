@@ -30,7 +30,7 @@ export const constantRouterMap = [
   {
     path: publicPath+'/',
     component: Layout,
-    redirect: publicPath + '/home',
+    redirect: publicPath + '/login',
     hidden: true
   },
   {
@@ -285,7 +285,7 @@ export const constantRouterMap = [
 ]
 
 export default new Router({
-  // mode: 'history',
+  mode: 'history',
   scrollBehavior: () => ({ y: 0 }),
   routes: constantRouterMap
 })
