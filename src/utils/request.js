@@ -66,7 +66,7 @@ service.interceptors.response.use(
       duration: 5 * 1000
     })
     router.push({
-      path: '/login'
+      path: '/manageView/login'
     })
     return Promise.reject(error)
   }
