@@ -3,7 +3,7 @@
       <el-row :gutter="20">
           <el-col :span="8" v-for="(item) in oldFileList" :key="item" style="margin: 10px 0">
             <el-card :body-style="{ padding: '0px' }">
-            <img :src="item" class="image">
+            <img :src="item" class="image" style="height: 350px">
             <div style="padding: 14px;">
                 <el-button type="text" class="button" @click="removeOldFile(item)">删除</el-button>
             </div>
