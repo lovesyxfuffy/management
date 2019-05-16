@@ -92,6 +92,7 @@ export default {
         // font_formats:"微软雅黑=微软雅黑,Microsoft YaHei;宋体=宋体,SimSun;黑体=黑体, SimHei;隶书=隶书, SimLi;楷体=楷体,楷体_GB2312, SimKai;andale mono=andale mono;arial=arial, helvetica,sans-serif;arial black=arial black,avant garde;comic sans ms=comic sans ms;impact=impact,chicago;Arial=Arial;Verdana=Verdana;Georgia=Georgia;Times New Roman=Times New Roman;Trebuchet MS=Trebuchet MS;Courier New=Courier New;Impact=Impact;Comic Sans MS=Comic Sans MS;Calibri=Calibri",
         fontsize_formats: "8pt 10pt 11pt 12pt 14pt 18pt 24pt 36pt",
         language_url: zh_CN,
+        convert_urls: false,
         language: 'zh_CN',
         selector: `#${this.tinymceId}`,
         height: this.height,

@@ -51,7 +51,7 @@ service.interceptors.response.use(
         })
       }
       router.push({
-        name: 'ogin'
+        name: 'login'
       })
       return Promise.reject('error')
     } else {
