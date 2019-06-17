@@ -1,8 +1,8 @@
-import axios from 'axios'
-import { Message } from 'element-ui'
-import store from '../store'
-import { getToken } from '@/utils/auth'
-import router from '@/router'
+import axios from "axios";
+import {Message} from "element-ui";
+import store from "../store";
+import {getToken} from "@/utils/auth";
+import router from "@/router";
 // 创建axios实例
 const service = axios.create({
   baseURL: process.env.BASE_API, // api 的 base_url
@@ -36,6 +36,7 @@ service.interceptors.response.use(
      * code为非20000是抛错 可结合自己业务进行修改
      */
     const res = response.data
+    const status = response.status
     if (res.status !== 1) {
       Message({
         message: res.message,
@@ -43,16 +44,20 @@ service.interceptors.response.use(
         duration: 5 * 1000
       })
 
-      if (res.code === 302) {
+      if (res.code === 403 || status == 403) {
         Message({
           message: '请先登录',
           type: 'error',
           duration: 5 * 1000
         })
       }
-      router.push({
-        name: 'login'
-      })
+
+      if(status == 403){
+        router.push({
+          path: '/manageView/login'
+        })
+      }
+
       return Promise.reject('error')
     } else {
       return response.data
