@@ -34,7 +34,7 @@
         </el-form-item>
 
         <el-form-item prop="content" style="margin-bottom: 30px;">
-          <Tinymce ref="editor" v-model="postForm.content" :height="400" />
+          <Tinymce ref="editor" v-model="postForm.content" :height="400" v-if="showEditor" />
         </el-form-item>
 
         <el-form-item prop="imgurl" style="margin-bottom: 30px;" v-if="$route.path.includes('excellent')">
@@ -114,7 +114,8 @@ export default {
         content: [{ validator: validateRequire }],
         source_uri: [{ validator: validateSourceUri, trigger: 'blur' }]
       },
-      tempRoute: {}
+      tempRoute: {},
+      showEditor: true
     }
   },
   computed: {
@@ -156,12 +157,14 @@ export default {
   },
   methods: {
     fetchData(model) {
+      this.showEditor = false
       this.postForm = Object.assign({}, defaultForm)
       fetchArticleByModel(model).then(response => {
         if(response.data) {
           this.postForm = response.data;
           this.$set(this.postForm, 'content', response.data.content)
           this.postForm.subtitle = response.data.subtitle || ''
+          this.showEditor = true
           // Just for test
           // Set tagsview title
           this.setTagsViewTitle()
